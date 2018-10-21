@@ -13,7 +13,7 @@ if ($_REQUEST['api'] ==="sms") {
     require_once "sms/sms.php";
 }elseif($_REQUEST['api'] === "sms-token") {
     $token = uniqid();
-    $_SERVER['token'] = $token;
+    $_SESSION['token'] = $token;
     $_json->Token = $token;
     echo json_encode($_json);
 }elseif ($_REQUEST['api'] ==='sms-complex'){
